@@ -1,0 +1,13 @@
+.criminalsList, .officersList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-between;
+}
+
+.criminal, .officer {
+  border: 1px dotted black;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  flex-basis: 25%;
+}
