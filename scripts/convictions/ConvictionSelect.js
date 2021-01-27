@@ -13,14 +13,14 @@ const eventHub = document.querySelector(".container")
 const contentTarget = document.querySelector(".filters__crime")
 
 // On the event hub, listen for a "change" event.
-eventHub.addEventListener("change", event => {
+eventHub.addEventListener("change", changeEvent => {
     // Only do this if the `crimeSelect` element was changed
-    if (event.target.id === "crimeSelect") {
+    if (changeEvent.target.id === "crimeSelect") {
         // debugger
         // Create custom event. Provide an appropriate name.
         const customEvent = new CustomEvent("crimeChosen", {
             detail: {
-                crimeThatWasChosen: event.target.value
+                crimeThatWasChosen: changeEvent.target.value
             }
         })
 
