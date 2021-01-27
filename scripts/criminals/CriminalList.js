@@ -12,7 +12,7 @@ const renderToDom = (criminalCollection) => {
   for (const criminal of criminalCollection) {
     criminalsHTMLRepresentations += Criminal(criminal)
   }
-  
+
   criminalsContainer.innerHTML = `
   <h3>Criminals</h3>
   <section class="criminalsList">
@@ -59,7 +59,7 @@ eventHub.addEventListener("crimeChosen", crimeChosenEvent => {
     /*
       Now that we have the name of the chosen crime, filter the criminals data down to the people that committed the crime
     */
-  //  debugger
+    //  debugger
     const filteredCriminalsArray = criminalsArray.filter(criminalObj => criminalObj.conviction === chosenConvictionObject.name)
 
 
@@ -69,4 +69,22 @@ eventHub.addEventListener("crimeChosen", crimeChosenEvent => {
     */
     renderToDom(filteredCriminalsArray)
   }
+})
+
+eventHub.addEventListener("officerSelected", event => {
+  // How can you access the officer name that was selected by the user?
+  const officerName = event.detail.selectedOfficerName
+
+  // How can you get the criminals that were arrested by that officer?
+  const criminals = useCriminals()
+  const filteredCriminalsArray = criminals.filter (
+    criminalObject => {
+      if (criminalObject.arrestingOfficer === officerName) {
+        return true
+      }
+    }
+  )
+
+  //Render filtered criminals to DOM
+  renderToDom(filteredCriminalsArray)
 })
