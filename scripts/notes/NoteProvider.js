@@ -8,6 +8,8 @@ export const saveNote = note => {
     },
     body: JSON.stringify(note)
   })
+    .then(() => getNotes())
+    .then(dispatchStateChangeEvent)
 }
 
 export const getNotes = () => {
@@ -19,3 +21,11 @@ export const getNotes = () => {
 }
 
 export const useNotes = () => notes.slice()
+
+const eventHub = document.querySelector(".container")
+
+const dispatchStateChangeEvent = () => {
+  const noteStateChangedEvent = new CustomEvent("noteStateChanged")
+
+  eventHub.dispatchEvent(noteStateChangedEvent)
+}

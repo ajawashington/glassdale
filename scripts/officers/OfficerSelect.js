@@ -44,3 +44,5 @@ const render = officerCollection => {
         </select>
     `
 }
+
+eventHub.addEventListener("crimeChosen", crimeChosenEvent => document.querySelector("#officerSelect").value = 0)

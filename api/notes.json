@@ -27,26 +27,10 @@
     {
       "text": "Too much",
       "suspect": "Bryan",
-      "date": "2021-01-28",
+      "date": "01/28/2021",
       "author": "Sage",
       "intuition": "very suspicious",
       "id": 4
-    },
-    {
-      "text": "",
-      "suspect": "New note",
-      "date": "",
-      "author": "",
-      "intuition": "",
-      "id": 5
-    },
-    {
-      "text": "",
-      "suspect": "New note 2",
-      "date": "",
-      "author": "",
-      "intuition": "",
-      "id": 6
     }
   ]
 }
