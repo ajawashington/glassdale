@@ -75,3 +75,5 @@ const render = convictionsCollection => {
         </select>
     `
 }
+
+eventHub.addEventListener("officerSelected", crimeChosenEvent => document.querySelector("#crimeSelect").value = 0)

@@ -1,0 +1,36 @@
+{
+  "notes": [
+    {
+      "text": "It's probably Bryan",
+      "suspect": "Bryan",
+      "date": "01/28/2021",
+      "author": "Jisie",
+      "intuition": "Super suspicious",
+      "id": 1
+    },
+    {
+      "text": "It's probably Bryan pt 2",
+      "suspect": "Bryan",
+      "date": "01/28/2021",
+      "author": "Jisie",
+      "intuition": "Super suspicious",
+      "id": 2
+    },
+    {
+      "text": "It's probably Bryan pt 3",
+      "suspect": "Bryan",
+      "date": "01/28/2021",
+      "author": "Scott",
+      "intuition": "Super suspicious",
+      "id": 3
+    },
+    {
+      "text": "Too much",
+      "suspect": "Bryan",
+      "date": "01/28/2021",
+      "author": "Sage",
+      "intuition": "very suspicious",
+      "id": 4
+    }
+  ]
+}
