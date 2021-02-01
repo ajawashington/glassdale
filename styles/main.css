@@ -1,4 +1,24 @@
-.criminalsList, .officersList, .notesList {
+@import './modal.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;900&display=swap');
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  color: white;
+  background-color: #313153;
+  padding: .5em;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+main {
+  background-color: #f1f1f1;
+}
+
+.criminalsList, .officersList {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -9,6 +29,7 @@
   margin: 0.5rem;
   padding: 0.5rem;
   flex-basis: 25%;
+  background-color: white;
 }
 
 .criminal {
@@ -26,8 +47,32 @@
 
 .caseDataContainer {
   display: flex;
+  padding: 1em;
+}
+
+
+.notesAside {
+  display: flex;
+  flex-direction: column;
+  min-width: 30%;
 }
 
 .note {
   border: 1px dotted orchid;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  background-color: rgb(175, 184, 216);
+  padding: .5em;
+}
+
+.filter {
+  padding: 0 .5em 0 .5em;
+}
+
+fieldset {
+  border: none;
+  padding-left: 0;
 }
