@@ -1,13 +1,13 @@
 // TODO: PART 2 - Listen for Custom Event and Display Associates on DOM
 // Which Component Needs to Listen for the "showAssociates" event?
-// ** New AssociatesModalComponent
-// Create ModalComponent that takes in a Criminal object and returns some HTML representation of a criminal’s associates
+// ** New AssociatesList Component
+// Create AssociatesList Component that takes in a Criminal object and returns some HTML representation of a criminal’s associates
 // Add EventListener to Event Hub that listens for "showAssociates" event
 // TEST - need event listener on DOM >> Where? Button Component
-// Needs a place to go in the DOM - add Modal Container to index.html
+// Needs a place to go in the DOM - add associates container element to index.html
 // Get the Criminal ID from the detail
 // Find the criminal from the array of criminals (>> import useCriminals)
-// Call the ModalComponent function and pass in the criminal as an argument and store HTML string in a variable
+// Call the AssociatesList component function and pass in the criminal as an argument and store HTML string in a variable
 // Add the resulting HTML to the DOM
 // ADD MODAL CSS
 // Import modal.css to main.css
