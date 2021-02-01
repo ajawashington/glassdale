@@ -16,10 +16,8 @@ import { useCriminals } from "../criminals/CriminalProvider.js"
 
 const contentContainer = document.querySelector(".associatesContainer")
 
-export const AssociatesModal = (criminalObj) => {
+export const AssociatesList = (criminalObj) => {
     const HTMLRep = `
-    <div id="alibi__modal" class="modal--parent">
-        <div class="modal--content">
             <h1>Known associates for ${criminalObj.name}</h1>
             ${criminalObj.known_associates.map(associate => {
         return `<section class="associate__container">
@@ -27,9 +25,7 @@ export const AssociatesModal = (criminalObj) => {
             <div class="associate__alibi">Alibi: ${associate.alibi}</div>
             </section>`
     }).join("")}
-    <button id="modal--close">close modal</button>
-        </div>
-    </div>
+        <button id="modal--close">close</button>
         `
 
     contentContainer.innerHTML = HTMLRep
@@ -40,7 +36,7 @@ eventHub.addEventListener("AssociatesClicked", event => {
     const selectedCriminalId = event.detail.criminalId
     const criminalsArray = useCriminals()
     const selectedCriminal = criminalsArray.find((criminal) => criminal.id === selectedCriminalId)
-    AssociatesModal(selectedCriminal)
+    AssociatesList(selectedCriminal)
 })
 
 

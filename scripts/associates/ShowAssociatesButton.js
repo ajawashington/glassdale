@@ -8,7 +8,7 @@
 // Dispatch Custom Event named something like "showAssociates" and pass Id of Criminal in the detail object
 
 
-import "./AssociatesModal.js"
+import "./AssociatesList.js"
 
 export const ShowAssociatesButton = (criminalObj) => {
     return `<button id="associates--${criminalObj.id}">Associate Alibis</button>`
