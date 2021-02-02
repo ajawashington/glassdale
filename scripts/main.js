@@ -5,6 +5,9 @@ import { ShowNoteButton } from "./notes/ShowNotesButton.js";
 import { OfficerList } from "./officers/OfficerList.js";
 import { OfficerSelect } from "./officers/OfficerSelect.js"
 import "./notes/NoteList.js"
+import { renderWitnessesButton } from "./witnesses/ShowWitnessesButton.js"
+import"./witnesses/WitnessList.js"
+import { renderCriminalsButton } from "./criminals/ShowCriminalsButton.js";
 
 OfficerList()
 CriminalList()
@@ -23,3 +26,6 @@ ShowNoteButton()
 //   "intuition": "Super suspicious"
 // }
 // saveNote(newNote)
+
+renderWitnessesButton()
+renderCriminalsButton()
