@@ -93,4 +93,4 @@ eventHub.addEventListener("witnessesClicked", () => {
     criminalsContainer.innerHTML = ""
 })
 
-eventHub.addEventListener("criminalsClicked", CriminalList)
+eventHub.addEventListener("criminalsClicked", () => CriminalList())

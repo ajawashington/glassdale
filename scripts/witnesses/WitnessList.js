@@ -29,12 +29,12 @@ const render = (witnessStatementsArray) => {
   for (const witness of witnessStatementsArray) {
 
     witnessStatementsHTMLRepresentations += WitnessStatement(witness)
-
-    witnessesContainer.innerHTML = `
-          <h2>Witness Statements</h2>
-          <section class="witnessesList">
-            ${witnessStatementsHTMLRepresentations}
-          </section>
-        `
   }
+  
+  witnessesContainer.innerHTML = `
+        <h2>Witness Statements</h2>
+        <section class="witnessesList">
+          ${witnessStatementsHTMLRepresentations}
+        </section>
+      `
 }
