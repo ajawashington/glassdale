@@ -1,15 +1,28 @@
 import { saveNote } from "./NoteProvider.js"
+import { getCriminals, useCriminals } from "./../criminals/CriminalProvider.js"
 
 const contentTarget = document.querySelector(".noteFormContainer")
 const eventHub = document.querySelector(".container")
 
-const render = () => {
+export const NoteForm = () => {
+    getCriminals()
+        .then(() => {
+            const arrayOfCriminals = useCriminals()
+            render(arrayOfCriminals)
+        })
+}
+
+const render = (criminalsArray) => {
+    // debugger
     contentTarget.innerHTML = `
     <h2>Notes</h2>
     <form action="">
         <fieldset>
-            <label for="note-suspect">Suspect: </label>
-            <input type="text" id="note-suspect" name="note-suspect">
+            <label for="note-criminalId">Suspect: </label>
+            <select name="note-criminalId" id="note-criminalId">
+                <option value="0">Please select a criminal...</option>
+                ${criminalsArray.map(criminal => `<option value="${criminal.id}">${criminal.name}</option>`).join("")}
+            </select>
         </fieldset>
         <fieldset>
             <label for="note-author">Author: </label>
@@ -31,15 +44,12 @@ const render = () => {
     </form>
     `}
 
-export const NoteForm = () => {
-    render()
-}
 
 // Handle browser-generated click event in component
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveNote") {
         clickEvent.preventDefault()
-        const suspect = document.getElementById("note-suspect").value
+        const criminalId = document.getElementById("note-criminalId").value
         const author = document.getElementById("note-author").value
         const date = document.getElementById("note-date").value
         const intuition = document.getElementById("note-intuition").value
@@ -49,12 +59,12 @@ eventHub.addEventListener("click", clickEvent => {
         const newNote = {
             // Key/value pairs here
             "text": text,
-            "suspect": suspect,
+            "criminalId": parseInt(criminalId),
             "date": date,
             "author": author,
             "intuition": intuition
         }
-
+        // debugger
         // Change API state and application state
         saveNote(newNote)
     }
