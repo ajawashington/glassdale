@@ -1,13 +1,14 @@
-import { ConvictionSelect } from "./convictions/ConvictionSelect.js";
-import { CriminalList } from "./criminals/CriminalList.js";
-import { NoteForm } from "./notes/NoteForm.js";
-import { ShowNoteButton } from "./notes/ShowNotesButton.js";
-import { OfficerList } from "./officers/OfficerList.js";
+import { ConvictionSelect } from "./convictions/ConvictionSelect.js"
+import { CriminalList } from "./criminals/CriminalList.js"
+import { NoteForm } from "./notes/NoteForm.js"
+import { ShowNoteButton } from "./notes/ShowNotesButton.js"
+import { OfficerList } from "./officers/OfficerList.js"
 import { OfficerSelect } from "./officers/OfficerSelect.js"
 import "./notes/NoteList.js"
 import { renderWitnessesButton } from "./witnesses/ShowWitnessesButton.js"
-import"./witnesses/WitnessList.js"
-import { renderCriminalsButton } from "./criminals/ShowCriminalsButton.js";
+import "./witnesses/WitnessList.js"
+import { renderCriminalsButton } from "./criminals/ShowCriminalsButton.js"
+import { DonutList } from "./donuts/DonutList.js"
 
 OfficerList()
 CriminalList()
@@ -29,3 +30,7 @@ ShowNoteButton()
 
 renderWitnessesButton()
 renderCriminalsButton()
+
+
+//* Since we want the list of donuts to appear when the application loads, we call the DonutList function: 
+DonutList()
