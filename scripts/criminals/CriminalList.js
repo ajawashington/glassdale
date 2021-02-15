@@ -88,3 +88,9 @@ eventHub.addEventListener("officerSelected", event => {
     //Render filtered criminals to DOM
     renderToDom(filteredCriminalsArray)
 })
+
+eventHub.addEventListener("witnessesClicked", () => {
+    criminalsContainer.innerHTML = ""
+})
+
+eventHub.addEventListener("criminalsClicked", () => CriminalList())

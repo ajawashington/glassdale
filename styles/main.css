@@ -18,14 +18,14 @@ main {
   background-color: #f1f1f1;
 }
 
-.criminalsList, .officersList {
+.criminalsList, .officersList, witnessesList {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-content: space-between;
 }
 
-.criminal, .officer, .note {
+.criminal, .officer, .note, .witness {
   margin: 0.5rem;
   padding: 0.5rem;
   flex-basis: 25%;
@@ -40,6 +40,10 @@ main {
   border: 1px dotted blue;
 }
 
+.witness {
+  border: 1px dotted green;
+}
+
 .notesAside {
   display: flex;
   flex-direction: column;
@@ -49,7 +53,6 @@ main {
   display: flex;
   padding: 1em;
 }
-
 
 .notesAside {
   display: flex;
@@ -61,14 +64,14 @@ main {
   border: 1px dotted orchid;
 }
 
-.filters {
+.filters, .display-buttons {
   display: flex;
   align-items: center;
   background-color: rgb(175, 184, 216);
   padding: .5em;
 }
 
-.filter {
+.filter, .button {
   padding: 0 .5em 0 .5em;
 }
 
