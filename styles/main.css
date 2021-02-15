@@ -25,7 +25,7 @@ main {
   align-content: space-between;
 }
 
-.criminal, .officer, .note, .witness {
+.criminal, .officer, .note, .witness, .donut {
   margin: 0.5rem;
   padding: 0.5rem;
   flex-basis: 25%;
@@ -44,12 +44,16 @@ main {
   border: 1px dotted green;
 }
 
+.donut {
+  border: 1px dotted yellow;
+}
+
 .notesAside {
   display: flex;
   flex-direction: column;
 }
 
-.caseDataContainer {
+.caseDataContainer, .donutContainer {
   display: flex;
   padding: 1em;
 }

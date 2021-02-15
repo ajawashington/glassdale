@@ -16,5 +16,23 @@
       "intuition": "test",
       "id": 2
     }
+  ],
+  "donuts": [
+    {
+      "id": 1,
+      "flavor": "maple bacon",
+      "shape": "round",
+      "price": 100.00,
+      "topping": "more bacon",
+      "filling": "apple"
+    },
+    {
+      "id": 2,
+      "flavor": "fish",
+      "shape": "fish shaped",
+      "price": -100.00,
+      "topping": "sea salt",
+      "filling": "fish paste"
+    }
   ]
 }
