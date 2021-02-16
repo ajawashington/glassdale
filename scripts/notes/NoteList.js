@@ -7,8 +7,17 @@ const contentTarget = document.querySelector(".notesContainer")
 // Define ye olde Evente Hubbe
 const eventHub = document.querySelector(".container")
 
+let allNotes = []
+let allCriminals = []
+
 eventHub.addEventListener("showNotesClicked", customEvent => {
   NoteList()
+})
+
+eventHub.addEventListener("noteStateChanged", event => {
+  if (contentTarget.innerHTML !== "") {
+    NoteList()
+  }
 })
 
 // Standard list function you're used to writing by now. BUT, don't call this in main.js! Why not?
@@ -16,15 +25,15 @@ export const NoteList = () => {
   getNotes()
   .then(getCriminals)
     .then(() => {
-      const allNotes = useNotes()
-      const allCriminals = useCriminals()
-      render(allNotes, allCriminals)
+      allNotes = useNotes()
+      allCriminals = useCriminals()
+      render()
     })
 }
 
-const render = (noteArray, criminalArray) => {
-  const allNotesConvertedToStrings = noteArray.map(noteObject => {
-    const relatedCriminalObject = criminalArray.find(criminal => criminal.id === noteObject.criminalId)
+const render = () => {
+  const allNotesConvertedToStrings = allNotes.map(noteObject => {
+    const relatedCriminalObject = allCriminals.find(criminal => criminal.id === noteObject.criminalId)
     return NoteHTMLConverter(noteObject, relatedCriminalObject)
     // debugger
 
@@ -38,10 +47,3 @@ const render = (noteArray, criminalArray) => {
     </section>
   `
 }
-
-
-eventHub.addEventListener("noteStateChanged", event => {
-  if (contentTarget.innerHTML !== "") {
-    NoteList()
-  }
-})

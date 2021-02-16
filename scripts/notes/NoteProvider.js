@@ -1,3 +1,5 @@
+const eventHub = document.querySelector(".container")
+
 let notes = []
 
 export const saveNote = note => {
@@ -30,7 +32,6 @@ export const getNotes = () => {
 
 export const useNotes = () => notes.slice()
 
-const eventHub = document.querySelector(".container")
 
 const dispatchStateChangeEvent = () => {
   const noteStateChangedEvent = new CustomEvent("noteStateChanged")

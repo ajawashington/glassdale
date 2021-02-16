@@ -16,6 +16,7 @@ export const NoteHTMLConverter = (noteObject, criminalObject) => {
 }
 
 eventHub.addEventListener("click", clickEvent => {
+  // debugger
   if (clickEvent.target.id.startsWith("deleteNote--")) {
     const [prefix, id] = clickEvent.target.id.split("--")
 
