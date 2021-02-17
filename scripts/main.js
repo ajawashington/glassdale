@@ -9,6 +9,8 @@ import { renderWitnessesButton } from "./witnesses/ShowWitnessesButton.js"
 import "./witnesses/WitnessList.js"
 import { renderCriminalsButton } from "./criminals/ShowCriminalsButton.js"
 import { DonutList } from "./donuts/DonutList.js"
+import { renderFacilitiesButton } from "./facilities/DisplayFacilitiesButton.js"
+import "./facilities/FacilityList.js"
 
 OfficerList()
 CriminalList()
@@ -30,6 +32,7 @@ ShowNoteButton()
 
 renderWitnessesButton()
 renderCriminalsButton()
+renderFacilitiesButton()
 
 
 //* Since we want the list of donuts to appear when the application loads, we call the DonutList function: 

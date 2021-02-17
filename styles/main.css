@@ -18,14 +18,14 @@ main {
   background-color: #f1f1f1;
 }
 
-.criminalsList, .officersList, witnessesList {
+.criminalsList, .officersList, witnessesList, .facilitiesList {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-content: space-between;
 }
 
-.criminal, .officer, .note, .witness, .donut {
+.criminal, .officer, .note, .witness, .donut, .facility {
   margin: 0.5rem;
   padding: 0.5rem;
   flex-basis: 25%;
@@ -46,6 +46,10 @@ main {
 
 .donut {
   border: 1px dotted yellow;
+}
+
+.facility {
+  border: 1px dotted violet;
 }
 
 .notesAside {

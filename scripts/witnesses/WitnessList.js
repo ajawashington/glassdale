@@ -5,13 +5,11 @@ const eventHub = document.querySelector(".container")
 const witnessesContainer = document.querySelector(".witnessesContainer")
 
 
-eventHub.addEventListener("witnessesClicked", () => {
-  WitnessList()
-})
+eventHub.addEventListener("witnessesClicked", () => WitnessList())
 
-eventHub.addEventListener("criminalsClicked", () => {
-  witnessesContainer.innerHTML = ""
-})
+eventHub.addEventListener("criminalsClicked", () => witnessesContainer.innerHTML = "")
+
+eventHub.addEventListener("facilitiesClicked", () => witnessesContainer.innerHTML = "")
 
 const WitnessList = () => {
 
@@ -30,7 +28,7 @@ const render = (witnessStatementsArray) => {
 
     witnessStatementsHTMLRepresentations += WitnessStatement(witness)
   }
-  
+
   witnessesContainer.innerHTML = `
         <h2>Witness Statements</h2>
         <section class="witnessesList">
