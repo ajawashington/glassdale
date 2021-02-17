@@ -5,6 +5,15 @@ import { useConvictions } from "./../convictions/ConvictionProvider.js"
 const eventHub = document.querySelector(".container")
 const criminalsContainer = document.querySelector(".criminalsContainer")
 
+export const CriminalList = () => {
+
+    getCriminals()
+        .then(() => {
+            const criminalsArray = useCriminals()
+            renderToDom(criminalsArray)
+
+        })
+}
 
 const renderToDom = (criminalCollection) => {
     let criminalsHTMLRepresentations = ""
@@ -14,20 +23,10 @@ const renderToDom = (criminalCollection) => {
     }
 
     criminalsContainer.innerHTML = `
-  <h2>Criminals</h2>
-  <section class="criminalsList">
-  ${criminalsHTMLRepresentations}
-  </section>`
-}
-
-export const CriminalList = () => {
-
-    getCriminals()
-        .then(() => {
-            const criminalsArray = useCriminals()
-            renderToDom(criminalsArray)
-
-        })
+    <h2>Criminals</h2>
+    <section class="criminalsList">
+    ${criminalsHTMLRepresentations}
+    </section>`
 }
 
 // Listen for the "crimeChosen" custom event you dispatched in ConvictionSelect
