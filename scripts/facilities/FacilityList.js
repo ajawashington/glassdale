@@ -23,7 +23,6 @@ const FacilityList = () => {
     
     render()
   })
-  
 }
 
 const render = () => {
