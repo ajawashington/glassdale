@@ -1,38 +1,22 @@
 {
-   "notes": [
+   "Note": [
      {
-       "text": "test",
-       "criminalId": 9,
-       "date": "2021-02-11T15:24",
-       "author": "test",
-       "intuition": "test",
-       "id": 2
-      },
-      {
-        "text": "Test",
-        "criminalId": 7,
-        "date": "2021-03-16",
-        "author": "Aja",
-        "intuition": "Test",
-        "id": 3
+       "text": "string",
+       "criminalId": "int",
+       "date": "datetime",
+       "author": "string",
+       "intuition": "string",
+       "id": "int"
       }
     ],
-    "donuts": [
+    "Donut": [
       {
-        "id": 1,
-        "flavor": "maple bacon",
-        "shape": "round",
-        "price": 100,
-        "topping": "more bacon",
-        "filling": "apple"
-      },
-      {
-        "id": 2,
-        "flavor": "fish",
-        "shape": "fish shaped",
-        "price": -100,
-        "topping": "sea salt",
-        "filling": "fish paste"
+        "id": "int",
+        "flavor": "string",
+        "shape": "string",
+        "price": "int",
+        "topping": "string",
+        "filling": "string"
       }
     ]
 }
