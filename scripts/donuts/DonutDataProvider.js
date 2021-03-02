@@ -17,7 +17,7 @@ let donutsArray = []
 //*   ii. After receiving an HTTP response (.then), convert it to JSON so that we can access the data 
 //*   iii. After parsing the response (.then), assign the data to the variable from Step 1
 export const getDonuts = () => {
-  return fetch("http://localhost:8088/donuts")
+  return fetch("https://deployed-projects-default-rtdb.firebaseio.com/glassdale/donuts.json")
   .then(response => response.json())
   .then(donutsCollection => {
     donutsArray = donutsCollection

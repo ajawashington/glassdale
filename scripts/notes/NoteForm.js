@@ -62,8 +62,8 @@ eventHub.addEventListener("click", clickEvent => {
             "criminalId": parseInt(criminalId),
             "date": date,
             "author": author,
-            "intuition": intuition
-        }
+            "intuition": intuition,
+                   }
         // debugger
         // Change API state and application state
         saveNote(newNote)
