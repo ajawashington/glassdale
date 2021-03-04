@@ -1,5 +1,4 @@
-import firebaseConfig from "../../settings";
-const dbURL = firebaseConfig.APP_DATABASE_URL;
+const dbURL = 'https://deployed-projects-default-rtdb.firebaseio.com/glassdale/notes.json'
 
 const eventHub = document.querySelector(".container");
 let notes = [];
@@ -25,9 +24,8 @@ export const deleteNote = (noteId) => {
 };
 
 export const getNotes = () => {
-  
-  debugger;
-  return fetch(`${dbURL}/notes.json`)
+
+  return fetch(`${dbURL}`)
     .then((response) => response.json())
     .then((parsedNotes) => {
       notes = parsedNotes;

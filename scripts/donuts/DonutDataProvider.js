@@ -1,5 +1,4 @@
-import firebaseConfig from "../../settings"
-const dbURL = firebaseConfig.APP_DATABASE_URL
+const dbURL = "https://deployed-projects-default-rtdb.firebaseio.com/glassdale"
 
 let donutsArray = []
 
