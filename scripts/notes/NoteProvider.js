@@ -5,7 +5,7 @@ const eventHub = document.querySelector(".container");
 let notes = [];
 
 export const saveNote = (note) => {
-  return fetch(`${dbURL}/notes.json`, {
+  return fetch(`${dbURL}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -28,14 +28,15 @@ export const getNotes = () => {
   return fetch(`${dbURL}`)
     .then((response) => response.json())
     .then((parsedNotes) => {
-      notes = parsedNotes
-      console.warn(parsedNotes)
+      for (const [key, value] of Object.entries(parsedNotes)) {
+        value.firebaseKey = key;
+        notes.push(value)
+      }
     });
 };
 
 export const useNotes = () => {
-  debugger;
-  notes.slice();
+  return notes.slice();
 };
 const dispatchStateChangeEvent = () => {
   const noteStateChangedEvent = new CustomEvent("noteStateChanged");

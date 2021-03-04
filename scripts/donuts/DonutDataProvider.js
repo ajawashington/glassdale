@@ -3,15 +3,18 @@ const dbURL = "https://deployed-projects-default-rtdb.firebaseio.com/glassdale/d
 let donutsArray = []
 
 export const getDonuts = () => {
-  debugger
   return fetch(`${dbURL}`)
   .then(response => response.json())
   .then(donutsCollection => {
-    donutsArray = donutsCollection
-    console.warn(donutsCollection)
+
+    for (const [key, value] of Object.entries(donutsCollection)) {
+      value.firebaseKey = key;
+      donutsArray.push(value)
+    }
+    console.warn(donutsArray)
   })
 }
 
 export const useDonuts = () => {
-  donutsArray.slice()
+  return donutsArray.slice()
 }
