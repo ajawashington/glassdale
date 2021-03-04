@@ -28,6 +28,6 @@ export const DonutHTMLRepresentation = (donut) => {
     <p>Topping: ${donut.topping}</p>
     <p>Price: ${donut.price}</p>
     </section>`
-  // debugger
+  //  
   return htmlForOneDonut
 }

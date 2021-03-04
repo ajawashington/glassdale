@@ -16,7 +16,7 @@ const contentTarget = document.querySelector(".filters__crime")
 eventHub.addEventListener("change", changeEvent => {
     // Only do this if the `crimeSelect` element was changed
     if (changeEvent.target.id === "crimeSelect") {
-        // debugger
+        //   
         // Create custom event. Provide an appropriate name.
         const customEvent = new CustomEvent("crimeChosen", {
             detail: {
@@ -40,7 +40,7 @@ export const ConvictionSelect = () => {
 }
 
 const render = convictionsCollection => {
-    //  debugger
+    //    
     /*
         Use interpolation here to invoke the map() method on
         the convictionsCollection to generate the option elements.
