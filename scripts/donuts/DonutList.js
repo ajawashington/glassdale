@@ -33,7 +33,7 @@ const render = () => {
   //? From the above options, which one do I want to use? .map because it allows us to return the html representation for each item, eventually giving us an array of strings
   //? How do you access the current item being iterated over within the loop? The first parameter of the callback function for .map. Here, that's donut
   donutsArray.map((donut) => {
-    // debugger
+    //  
     //* 5. For each item in the collection, build the HTML representation
     //*   i. Build the HTML for one item
           //! DonutHTMLRepresentation is a function defined in Donut.js and imported into this component
@@ -42,9 +42,9 @@ const render = () => {
     //*   ii. Add the HTML for the current item to the variable from Step 3
     //? What can be used to add to the the current value of the variable so that we do that loose the current value? +=
     htmlDonutCollection += htmlForOneDonut
-    // debugger
+    //  
   })
-  // debugger
+  //  
 
   //* 6. Find the element on the DOM where you will put the HTML that has been built
   //? What are can be used to identify this element? A class, donutContainer

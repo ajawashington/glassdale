@@ -35,7 +35,7 @@ const render = () => {
   const allNotesConvertedToStrings = allNotes.map(noteObject => {
     const relatedCriminalObject = allCriminals.find(criminal => criminal.id === noteObject.criminalId)
     return NoteHTMLConverter(noteObject, relatedCriminalObject)
-    // debugger
+    //  
 
     // convert the notes objects to HTML with NoteHTMLConverter
   }).join("")

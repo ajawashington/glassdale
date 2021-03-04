@@ -3,7 +3,6 @@ import { deleteNote } from "./NoteProvider.js";
 const eventHub = document.querySelector(".container")
 
 export const NoteHTMLConverter = (noteObject, criminalObject) => {
-  debugger
   return `
       <section class="note">
           <div class="note__text">${noteObject.text}</div>
@@ -17,7 +16,6 @@ export const NoteHTMLConverter = (noteObject, criminalObject) => {
 }
 
 eventHub.addEventListener("click", clickEvent => {
-  // debugger
   if (clickEvent.target.id.startsWith("deleteNote--")) {
     const [prefix, id] = clickEvent.target.id.split("--")
 

@@ -26,7 +26,7 @@ export const CriminalList = () => {
 
 const renderToDom = (criminalCollection, crimFacCollection, facilityCollection) => {
     let criminalsHTMLRepresentations = ""
-    // debugger
+    //  
 
     // Step 1 - Iterate all criminals
     for (const criminal of criminalCollection) {
@@ -35,13 +35,13 @@ const renderToDom = (criminalCollection, crimFacCollection, facilityCollection) 
 
         // Step 3 - Convert the relationships to facilities with map()
         const arrayOfFacilityObjects = arrayOfCrimFacObjects.map(criminalFacility => {
-            // debugger
+            //  
             const relatedFacilityObject = facilityCollection.find(facility => facility.id === criminalFacility.facilityId)
             return relatedFacilityObject
         })
 
         // const arrayOfFacilityObjects = arrayOfCrimFacObjects.map(criminalFacility => facilityCollection.find(facility => facility.id === criminalFacility.facilityId))
-        // debugger
+        //  
 
         // Must pass the matching facilities to the Criminal component
         criminalsHTMLRepresentations += Criminal(criminal, arrayOfFacilityObjects)
@@ -57,7 +57,7 @@ const renderToDom = (criminalCollection, crimFacCollection, facilityCollection) 
 // Listen for the "crimeChosen" custom event you dispatched in ConvictionSelect
 eventHub.addEventListener("crimeChosen", crimeChosenEvent => {
     if (crimeChosenEvent.detail.crimeThatWasChosen !== "0") {
-        // debugger
+        //  
         /*
           We have the the id of the conviction that the user selected from the drop down (crimeChosenEvent.target.crimeThatWasChosen). But each criminal object has the name of the crime they were convicted for. So we need to get the name of the conviction associated with the unique identifier. To get the name, we get the conviction object which has the property for name.
         */
@@ -70,7 +70,7 @@ eventHub.addEventListener("crimeChosen", crimeChosenEvent => {
             // console.log("currently checking", convictionObj)
             return convictionObj.id === parseInt(crimeChosenEvent.detail.crimeThatWasChosen)
         })
-        // debugger
+        //  
         console.log(chosenConvictionObject.name)
 
         /*
@@ -85,7 +85,7 @@ eventHub.addEventListener("crimeChosen", crimeChosenEvent => {
         /*
           Now that we have the name of the chosen crime, filter the criminals data down to the people that committed the crime
         */
-        //  debugger
+        //   
         const filteredCriminalsArray = criminalsArray.filter(criminalObj => criminalObj.conviction === chosenConvictionObject.name)
 
 

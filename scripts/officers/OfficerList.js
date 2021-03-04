@@ -8,7 +8,7 @@ export const OfficerList = () => {
   getOfficers()
     .then(() => {
       const officerArray = useOfficers()
-      // debugger
+      //  
       /*
             Now that you have the data, what
             component should be rendered?
@@ -18,7 +18,7 @@ export const OfficerList = () => {
 
       for (const officer of officerArray) {
         officersHTMLRepresentations += Officer(officer)
-        // debugger
+        //  
       }
       
       officersContainer.innerHTML = `
