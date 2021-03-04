@@ -1,14 +1,20 @@
-import firebaseConfig from "../../settings"
-const dbURL = firebaseConfig.APP_DATABASE_URL
+const dbURL = "https://deployed-projects-default-rtdb.firebaseio.com/glassdale/donuts.json"
 
 let donutsArray = []
 
 export const getDonuts = () => {
-  return fetch(`${dbURL}/donuts.json`)
+  return fetch(`${dbURL}`)
   .then(response => response.json())
   .then(donutsCollection => {
-    donutsArray = donutsCollection
+
+    for (const [key, value] of Object.entries(donutsCollection)) {
+      value.firebaseKey = key;
+      donutsArray.push(value)
+    }
+    console.warn(donutsArray)
   })
 }
 
-export const useDonuts = () => donutsArray.slice()
+export const useDonuts = () => {
+  return donutsArray.slice()
+}
