@@ -1,14 +1,18 @@
-const dbURL =
-  "https://deployed-projects-default-rtdb.firebaseio.com/glassdale/notes.json";
+import firebaseConfig from "../../settings.js";
+
+const dbURL = firebaseConfig.APP_DATABASE_URL;
 
 const eventHub = document.querySelector(".container");
 let notes = [];
 
 export const saveNote = (note) => {
-  return fetch(`${dbURL}`, {
+  debugger;
+  return fetch(`${dbURL}/notes.json`, {
     method: "POST",
     headers: {
+      Accept: "application/json",
       "Content-Type": "application/json",
+      _method: "PATCH",
     },
     body: JSON.stringify(note),
   })
@@ -25,12 +29,13 @@ export const deleteNote = (noteId) => {
 };
 
 export const getNotes = () => {
+  debugger
   return fetch(`${dbURL}`)
     .then((response) => response.json())
     .then((parsedNotes) => {
       for (const [key, value] of Object.entries(parsedNotes)) {
         value.firebaseKey = key;
-        notes.push(value)
+        notes.push(value);
       }
     });
 };
